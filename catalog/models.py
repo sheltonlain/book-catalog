@@ -20,4 +20,4 @@ class Review(models.Model):
     body = models.TextField()
     
     def __str__(self):
-        return f"Review for {self.book.title}"
+        return self.body
