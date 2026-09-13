@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Reviews</h1>
+
+    <ul>
+    {% for review in review_list %}
+        <li style="font-weight: bold; line-height: 2.0;">Book: {{ review.book.title }}</li>
+        <ul>
+            <li>Publisher: {{ review.book.publisher }}</li>
+            <li>Review: {{ review.body }}</li>
+        </ul>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Publishers</h1>
+    <p>We are partnered with {{ publisher_list|length }} publishers.</p>
+
+    <ul>
+    {% for publisher in publisher_list %}
+        <li style="font-weight: bold;">Name: {{ publisher.name }}</li>
+        <p style="line-height: 0; font-weight: bold">Books:</p>
+        <ul>
+            {% for book in publisher.book_set.all %}
+                <li>{{ book.title }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -1,3 +1,20 @@
-from django.shortcuts import render
+from django.views.generic import ListView
 
-# Create your views here.
+from .models import Publisher, Book, Review
+
+
+class BookListView(ListView):
+    model = Book
+    template_name = "book_list.html"
+    context_object_name = "book_list"
+
+
+class PublisherListView(ListView):
+    model = Publisher
+    template_name = "publisher_list.html"
+    context_object_name = "publisher_list"
+
+class ReviewListView(ListView):
+    model = Review
+    template_name = "review_list.html"
+    context_object_name = "review_list"
